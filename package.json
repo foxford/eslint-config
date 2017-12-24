@@ -4,8 +4,8 @@
   "description": "No bullshit config",
   "main": ".",
   "dependencies": {
-    "babel-eslint": "^8.0.3",
-    "eslint": "^4.13.1",
+    "babel-eslint": "^8.1.0",
+    "eslint": "^4.14.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
@@ -13,14 +13,8 @@
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-unicorn": "^3.0.1"
   },
-  "peerDependencies": {
-    "babel-eslint": "8.0.x",
-    "eslint": "4.x.x",
-    "eslint-plugin-import": "2.8.x",
-    "eslint-plugin-node": "5.2.x",
-    "eslint-plugin-promise": "3.6.x",
-    "eslint-plugin-standard": "3.0.x",
-    "eslint-plugin-unicorn": "3.0.x"
+  "engines": {
+    "npm": ">=5.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
