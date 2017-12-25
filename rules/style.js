@@ -160,6 +160,17 @@ Object.assign(style.rules, {
   semi: ['error', 'never'],
   // require or disallow use of semicolons instead of ASI
   // http://eslint.org/docs/rules/semi
+
+  'space-before-function-paren': [
+    'error',
+    {
+      anonymous: 'always',
+      named: 'always',
+      asyncArrow: 'always',
+    },
+  ],
+  // require or disallow space before function opening parenthesis
+// http://eslint.org/docs/rules/space-before-function-paren
 })
 
 module.exports = style

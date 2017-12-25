@@ -5,15 +5,7 @@ Object.assign(solid.rules, {
   // enforce that class methods use "this"
   // http://eslint.org/docs/rules/class-methods-use-this
 
-  'no-magic-numbers': [
-    'warn',
-    {
-      ignore: [1, 0, -1],
-      ignoreArrayIndexes: true,
-      enforceConst: true,
-      detectObjects: false,
-    },
-  ],
+  'no-magic-numbers': 'off',
   // disallow magic numbers
   // http://eslint.org/docs/rules/no-magic-numbers
 
