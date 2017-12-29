@@ -1,14 +1,14 @@
 module.exports = {
   'extends': [
-    './rules/index',
     './rules/strict',
     './rules/variables',
     './rules/promise',
     './rules/import',
     './rules/errors',
-    './rules/style',
     './rules/node',
     './rules/ecma',
+    './rules/style',
+    './rules/index',
   ]
     .map(require.resolve)
     .concat(['plugin:unicorn/recommended']),
