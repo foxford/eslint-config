@@ -170,7 +170,7 @@ Object.assign(style.rules, {
     },
   ],
   // require or disallow space before function opening parenthesis
-// http://eslint.org/docs/rules/space-before-function-paren
+  // http://eslint.org/docs/rules/space-before-function-paren
 })
 
 module.exports = style

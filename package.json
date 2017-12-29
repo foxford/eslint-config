@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "No bullshit config",
   "main": ".",
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "npm": ">=5.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "babel-eslint": "^8.1.0",
     "eslint": "^4.14.0",
@@ -11,14 +19,7 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-unicorn": "^3.0.1"
-  },
-  "engines": {
-    "npm": ">=5.5"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT"
+    "eslint-plugin-unicorn": "^3.0.1",
+    "eslint-restricted-globals": "^0.1.1"
+  }
 }

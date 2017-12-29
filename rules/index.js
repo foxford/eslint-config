@@ -1,4 +1,8 @@
 const solid = require('eslint-config-airbnb-base/rules/best-practices')
+const globalsRestricted = require('eslint-restricted-globals')
+
+const globalsAllowed = ['history', 'location']
+// Allow history due to React Router props
 
 Object.assign(solid.rules, {
   'class-methods-use-this': 'warn',
@@ -9,6 +13,10 @@ Object.assign(solid.rules, {
   // disallow magic numbers
   // http://eslint.org/docs/rules/no-magic-numbers
 
+  'no-restricted-globals': ['error'].concat(globalsRestricted.filter(x => !~globalsAllowed.indexOf(x))),
+  // disallow specific globals
+  // http://eslint.org/docs/rules/no-restricted-globals
+
   'no-unused-expressions': [
     'error',
     {
@@ -17,6 +25,9 @@ Object.assign(solid.rules, {
   ],
   // disallow usage of expressions in statement position
   // http://eslint.org/docs/rules/no-unused-expressions
+
+  'radix': 'off',
+  // require use of the second argument for parseInt()
 
   'standard/array-bracket-even-spacing': ['error', 'either'],
   // https://github.com/xjamundx/eslint-plugin-standard#rules-explanations
