@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-adequate",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "No bullshit config",
   "main": ".",
   "author": "",
@@ -26,13 +26,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "babel-eslint": "^8.1.0",
-    "eslint": "^4.14.0",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-unicorn": "^3.0.1",
     "eslint-restricted-globals": "^0.1.1"
   }
