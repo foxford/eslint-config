@@ -13,6 +13,10 @@ Object.assign(es.rules, {
   // enforces no braces where they can be omitted
   // http://eslint.org/docs/rules/arrow-body-style
 
+  'arrow-parens': ['error', 'as-needed', { 'requireForBlockBody': true }],
+  // enforces no braces where they can be omitted
+  // https://eslint.org/docs/rules/arrow-parens
+
   'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
   // require or disallow an empty line between class members
   // https://eslint.org/docs/rules/lines-between-class-members
@@ -31,4 +35,5 @@ Object.assign(es.rules, {
 
 })
 
+// eslint-disable-next-line prefer-object-spread
 module.exports = Object.assign({}, es, { parser: 'babel-eslint' })

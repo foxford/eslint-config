@@ -36,6 +36,7 @@ Object.assign(solid.rules, {
   // https://github.com/xjamundx/eslint-plugin-standard#rules-explanations
 })
 
+// eslint-disable-next-line prefer-object-spread
 module.exports = Object.assign({}, solid, {
   env: { 'browser': true },
   plugins: ['standard'],

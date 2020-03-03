@@ -5,7 +5,6 @@ module.exports = {
     './rules/promise',
     './rules/import',
     './rules/errors',
-    './rules/node',
     './rules/ecma',
     './rules/style',
     './rules/index',
