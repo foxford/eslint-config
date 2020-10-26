@@ -94,7 +94,13 @@ Object.assign(style.rules, {
   // disallow the use of ternary operators
   // http://eslint.org/docs/rules/no-ternary
 
-  'no-underscore-dangle': 'off',
+  'no-underscore-dangle': [
+    'off',
+    {
+      allow: [],
+    },
+  ],
+
   // disallow dangling underscores in identifiers
   // http://eslint.org/docs/rules/no-underscore-dangle
 
