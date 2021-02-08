@@ -7,7 +7,9 @@ const objectCurly = {
   multiline, consistent: true, minProperties: 3,
 }
 
-Object.assign(style.rules, {
+const rules = {
+  ...style.rules,
+
   'array-bracket-newline': ['error', { multiline, minItems }],
   // enforce line breaks after opening and before closing array brackets
   // http://eslint.org/docs/rules/array-bracket-newline
@@ -177,6 +179,9 @@ Object.assign(style.rules, {
   ],
   // require or disallow space before function opening parenthesis
   // http://eslint.org/docs/rules/space-before-function-paren
-})
+}
 
-module.exports = style
+module.exports = {
+  ...style,
+  rules,
+}

@@ -1,6 +1,8 @@
 const imports = require('eslint-config-airbnb-base/rules/imports')
 
-Object.assign(imports.rules, {
+const next = {
+  ...imports.rules,
+
   'import/no-unresolved': 'off',
   // ensure imports point to files/modules that can be resolved
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
@@ -23,7 +25,7 @@ Object.assign(imports.rules, {
   // Require a newline after the last import/require in a group
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
 
-  'import/no-named-as-default': 'error',
+  'import/no-named-default': 'error',
   // Prevent importing the default as if it were named
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
 
@@ -45,9 +47,12 @@ Object.assign(imports.rules, {
       'bmp',
       'gif',
     ]
-      .reduce((obj, ext) => Object.assign(obj, { [ext]: 'always' }), {}),
+      .reduce((obj, ext) => ({ ...obj, [ext]: 'always' }), {}),
   ],
   // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
-})
+}
 
-module.exports = imports
+module.exports = {
+  ...imports,
+  rules: next,
+}
