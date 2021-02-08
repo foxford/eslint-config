@@ -20,6 +20,7 @@
   "author": "rogaldh",
   "main": "index.js",
   "scripts": {
+    "prepublishOnly": "npm test",
     "test": "eslint index.js rules && jest"
   },
   "devDependencies": {
