@@ -1,8 +1,8 @@
 const es = require('eslint-config-airbnb-base/rules/es6')
 
-es.parserOptions.ecmaVersion = 8
+const rules = {
+  ...es.rules,
 
-Object.assign(es.rules, {
   'arrow-body-style': [
     'error',
     'as-needed',
@@ -32,8 +32,14 @@ Object.assign(es.rules, {
   'no-restricted-syntax': 'off',
   // disallow certain syntax forms
   // http://eslint.org/docs/rules/no-restricted-syntax
+}
 
-})
-
-// eslint-disable-next-line prefer-object-spread
-module.exports = Object.assign({}, es, { parser: 'babel-eslint' })
+module.exports = {
+  ...es,
+  rules,
+  parser: 'babel-eslint',
+  parserOptions: {
+    ...es.parserOptions,
+    ecmaVersion: 8,
+  },
+}

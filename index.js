@@ -1,18 +1,11 @@
-module.exports = {
-  'extends': [
-    './rules/strict',
-    './rules/variables',
-    './rules/promise',
-    './rules/import',
-    './rules/errors',
-    './rules/ecma',
-    './rules/style',
-    './rules/index',
-  ]
-    .map(require.resolve)
-    .concat(['plugin:unicorn/recommended']),
+const eslintconfig = require('./eslint.config.js')
+
+const { 'extends': ext } = eslintconfig
+
+const config = {
+  ...eslintconfig,
+  'extends': ext.concat(['plugin:unicorn/recommended']),
   plugins: ['unicorn'],
-  parser: 'babel-eslint',
   rules: {
     'unicorn/import-index': 'off',
     'unicorn/filename-case': 'off',
@@ -23,3 +16,5 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/explicit-length-check.md
   },
 }
+
+module.exports = config

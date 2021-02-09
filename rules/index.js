@@ -4,7 +4,9 @@ const globalsRestricted = require('eslint-restricted-globals')
 const globalsAllowed = ['history', 'location']
 // Allow history due to React Router props
 
-Object.assign(solid.rules, {
+const rules = {
+  ...solid.rules,
+
   'class-methods-use-this': 'warn',
   // enforce that class methods use "this"
   // http://eslint.org/docs/rules/class-methods-use-this
@@ -34,10 +36,11 @@ Object.assign(solid.rules, {
 
   'standard/computed-property-even-spacing': ['error', 'even'],
   // https://github.com/xjamundx/eslint-plugin-standard#rules-explanations
-})
+}
 
-// eslint-disable-next-line prefer-object-spread
-module.exports = Object.assign({}, solid, {
+module.exports = {
+  ...solid,
+  rules,
   env: { 'browser': true },
   plugins: ['standard'],
-})
+}

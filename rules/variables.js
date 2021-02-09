@@ -1,6 +1,8 @@
 const variables = require('eslint-config-airbnb-base/rules/variables')
 
-Object.assign(variables.rules, {
+const rules = {
+  ...variables.rules,
+
   'no-unused-vars': [
     'warn',
     {
@@ -9,5 +11,9 @@ Object.assign(variables.rules, {
   ],
   // disallow declaration of variables that are not used in the code
   // http://eslint.org/docs/rules/no-unused-vars
-})
-module.exports = variables
+}
+
+module.exports = {
+  ...variables,
+  rules,
+}
