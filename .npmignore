@@ -1,1 +1,10 @@
 node_modules
+.semaphore
+test
+tools
+.eslintrc
+.editorconfig
+.eslintignore
+babel.config.js
+eslint-cli-test.js
+jest.config.js

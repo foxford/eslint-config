@@ -1,4 +1,4 @@
-const eslintconfig = require('./eslint.config.js')
+const eslintconfig = require('./eslint.config')
 
 const { 'extends': ext } = eslintconfig
 

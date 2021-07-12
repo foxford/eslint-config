@@ -1,0 +1,41 @@
+version: v1.0
+name: Foxford Eslint Config
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+execution_time_limit:
+  minutes: 15
+blocks:
+  - name: ⏬ Install dependencies
+    task:
+      jobs:
+        - name: "\U0001F4BE Install and cache"
+          commands:
+            - checkout
+            - sem-version node 14
+            - node --version
+            - npm --version
+            - 'cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-main'
+            - npm ci
+            - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json) node_modules
+  - name: "\U0001F50E Test"
+    task:
+      prologue:
+        commands:
+          - checkout --use-cache
+          - sem-version node 14
+          - node --version
+          - npm --version
+          - 'cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-main'
+      jobs:
+        - name: Test
+          commands:
+            - npm run test
+
+promotions:
+  - name: Publish on NPM
+    pipeline_file: npm-publish.yml
+    auto_promote:
+      when: "result = 'passed' and (branch = 'master' or tag =~ '^v')"
+

@@ -1,0 +1,22 @@
+version: v1.0
+name: Foxford Eslint Config
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: 🛳 Publish on npm
+    task:
+      secrets:
+        - name: npm-token
+      jobs:
+        - name: ⏫ Npm publish
+          commands:
+            - checkout
+            - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+            - source ./tools/scripts/get-tag.sh # set current tag
+            - echo ${NPM_PUBLISH_TAG}
+            - ./tools/scripts/npm-publish.sh
+            - rm -rf .npmrc
